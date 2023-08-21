@@ -1,0 +1,38 @@
+> # Creating a matrix with the provided preference data
+> preferences <- matrix(c(22, 28, 10, 20, 40, 40), ncol = 3, byrow = TRUE)
+> rownames(preferences) <- c("5-6 years", "7-8 years", "9-10 years")
+Error in dimnames(x) <- dn : 
+  length of 'dimnames' [1] not equal to array extent
+> colnames(preferences) <- c("A", "B", "C")
+> # Calculate the sample covariance between B and C
+> cov_bc <- cov(preferences[, "B"], preferences[, "C"])
+> print("Sample Covariance between B and C:")
+[1] "Sample Covariance between B and C:"
+> print(cov_bc)
+[1] 180
+> # Calculate the sample covariance matrix for the preferences
+> cov_matrix <- cov(preferences)
+> print("Sample Covariance Matrix for Preferences:")
+[1] "Sample Covariance Matrix for Preferences:"
+> print(cov_matrix)
+    A   B   C
+A   2 -12 -30
+B -12  72 180
+C -30 180 450
+> # Calculate the sample correlation between B and C
+> cor_bc <- cor(preferences[, "B"], preferences[, "C"])
+> print("Sample Correlation between B and C:")
+[1] "Sample Correlation between B and C:"
+> print(cor_bc)
+[1] 1
+> 
+> # Calculate the sample correlation matrix for the preferences
+> cor_matrix <- cor(preferences)
+> print("Sample Correlation Matrix for Preferences:")
+[1] "Sample Correlation Matrix for Preferences:"
+> print(cor_matrix)
+   A  B  C
+A  1 -1 -1
+B -1  1  1
+C -1  1  1
+> 
